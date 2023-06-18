@@ -11,12 +11,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Roulette Images'),
+        ),
       ),
-      home: AppBar(),
     );
   }
+}
+
+class RouletteImagesState extends State<RouletteImages> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+
+}
+
+class RouletteImages extends StatefulWidget {
+  const RouletteImages({super.key});
+
+  @override
+  RouletteImagesState createState() => RouletteImagesState();
 }
 
