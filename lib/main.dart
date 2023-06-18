@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,15 +17,36 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Roulette Images'),
         ),
+      body: const Center(
+        child: RouletteImages(),
+      )
       ),
     );
   }
 }
 
 class RouletteImagesState extends State<RouletteImages> {
+  String buttonText = 'start';
+  String image_url = 'images/image0.jpg';
+
+  void onPressed() {
+    setState(() {
+      buttonText == 'start' ? buttonText = 'stop' : buttonText = 'start';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: <Widget>[
+        SizedBox(
+          width: double.infinity,
+          height: 600,
+          child: Image.asset(image_url),
+        ),
+        ElevatedButton(onPressed: onPressed, child: Text(buttonText))
+      ],
+    );
   }
 
 }
