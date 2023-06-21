@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
       isStart = !isStart;
 
       if (isStart) {
-        timer = Timer.periodic(const Duration(seconds: 1), changeImage);
+        timer = Timer.periodic(const Duration(milliseconds: 100), changeImage);
         buttonText = 'stop';
       } else {
         setState(() {
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void changeImage(Timer timer) {
     setState(() {
       index++;
-      if (index >= 18) {
+      if (index >= 15) {
         index = 1;
       }
       display_image = 'images/image$index.jpg';
